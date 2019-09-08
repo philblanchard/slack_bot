@@ -15,7 +15,7 @@ slackEvents.on('message', (event) => {
     console.log(`${event.text}`)
     if (event.text && event.user){
       app.message(event.channel, event.text)
-      app.topic(event.channel, event.text)
+      // app.topic(event.channel, event.text)
     }
     // app.topic(event.channel, `The new concierge is ${event.user}`)
   });

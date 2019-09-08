@@ -6,7 +6,9 @@ const bot = new slack({token})
 const regex = /<\K@[^|]+/
 var app = {
     message: function(channel, text){
+        console.log(`the channel is ${channel} \n the message is ${text}`)
         match = text.match(regex)
+        console.log(`the match is ${match}`)
         bot.chat.postMessage({channel: `${channel}`, text:`${match}`}).catch(function(err){
             console.log(err)
         })
