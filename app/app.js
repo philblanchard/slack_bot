@@ -3,7 +3,7 @@ const token = process.env.SLACK_BOT_TOKEN
 
 const slack = require('slack')
 const bot = new slack({token})
-const regex = /<@([WU].+?)>.+/
+const regex = /<@\w+>/
 var app = {
     message: function(channel, text){
         console.log(`the channel is ${channel} \n the message is ${text}`)
