@@ -4,7 +4,7 @@ const usertoken = process.env.SLACK_USER_TOKEN
 
 const slack = require('slack')
 const bot = new slack({token})
-const user = new slack){{usertoken}}
+const user = new slack{{usertoken}}
 
 const regex = /<@\w+>/
 var app = {
