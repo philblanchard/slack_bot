@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 slackEvents.on('message', (event) => {
     console.log(`Received a message event: user ${event.user} in channel ${event.channel} says ${event.text}`);
     console.log(`${event.text}`)
-    if (event.text){
+    if (event.text && event.user){
       app.message(event.channel, event.text)
       app.topic(event.channel, event.text)
     }
@@ -22,11 +22,10 @@ slackEvents.on('message', (event) => {
 
 
 
- 
+
 (async () => {
   // Start the built-in server
   const server = await slackEvents.start(port);
- 
   // Log a message when the server is ready
   console.log(`Listening for events on ${server.address().port}`);
 })();
