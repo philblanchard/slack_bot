@@ -13,12 +13,11 @@ const port = process.env.PORT || 3000;
 slackEvents.on('message', (event) => {
     console.log(`Received a message event: user ${event.user} in channel ${event.channel} says ${event.text}`);
     console.log(`${event.text}`)
-    if (event.user){
+    if (event.text){
       app.message(event.channel, event.text)
       app.topic(event.channel, event.text)
     }
     // app.topic(event.channel, `The new concierge is ${event.user}`)
-
   });
 
 
