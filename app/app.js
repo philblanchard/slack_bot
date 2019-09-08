@@ -18,7 +18,7 @@ var app = {
     },
 
     topic: function(channel, topic){
-        user.channels.setTopic({channel: `${channel}`, topic: `${topic}`}).catch(function(err){
+        user.channels.setTopic({token: usertoken, channel: `${channel}`, topic: `${topic}`}).catch(function(err){
             console.log(err)
         })
     }
