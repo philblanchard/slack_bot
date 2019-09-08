@@ -9,7 +9,7 @@ var app = {
         console.log(`the channel is ${channel} \n the message is ${text}`)
         match = text.match(regex)
         console.log(`the match is ${match}`)
-        bot.chat.postMessage({channel: `${channel}`, text:`<${match}>`}).catch(function(err){
+        bot.chat.postMessage({channel: `${channel}`, text:`${match}`}).catch(function(err){
             console.log(err)
         })
     },
