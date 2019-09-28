@@ -1,12 +1,12 @@
 console.log(require('dotenv').config({debug: true}));
 const token = process.env.SLACK_BOT_TOKEN
 const usertoken = process.env.SLACK_USER_TOKEN
-
 const slack = require('slack')
 const bot = new slack({token})
 const user = new slack({usertoken})
 
 const regex = /<@\w+>/
+
 var app = {
     message: function(channel, text){
         console.log(`the channel is ${channel} \n the message is ${text}`)
@@ -18,7 +18,7 @@ var app = {
     },
 
     topic: function(channel, topic){
-        user.channels.setTopic({token: usertoken, channel: `${channel}`, topic: `${topic}`}).catch(function(err){
+        user.channels.setTopic({token: `${usertoken}`, channel: `${channel}`, topic: `Concierge: <@${topic}>`}).catch(function(err){
             console.log(err)
         })
     }
